@@ -20,3 +20,9 @@ class MarketDataFetcher:
     
     def __init__(self):
         pass
+    
+    def fetch_pair_data(pair, interval, exchange, since=None):
+        pass
+    
+    def kraken_fetch():
+        pass
