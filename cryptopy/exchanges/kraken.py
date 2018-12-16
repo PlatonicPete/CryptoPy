@@ -16,7 +16,8 @@ from cryptopy.MarketData import MarketData
 class KrakenExchange(Exchange):
     """
     This class:
-        1. Handles (HTTP) requests to the Kraken cryptocurrency exchange API
+        1. Makes requests via krakenex module to the Kraken cryptocurrency exchange API
+        2. Returns request data as raw dict or MarketData object
     """
     
     def __init__(self):
@@ -32,6 +33,15 @@ class KrakenExchange(Exchange):
         """
         This method returns the OHLC data as given by Kraken for a particular pair, interval,
         and since a particular date. Since = 0 gives all past data availiable via the API.
+        
+        Args:
+            pair - human-readable pair code for which to fetch data
+            interval - the trading interval for which to fetch data
+            since - timestamp since when to fetch data, default fetches all availiable data
+        
+        Returns:
+            Dictionary of arrays in form [timestamp, open, high, low, close, vwap, volume, count],
+            with one array per each data point
         """
         ##error handling of function input***XXX
         
