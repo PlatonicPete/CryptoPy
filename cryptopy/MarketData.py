@@ -17,14 +17,20 @@ class MarketData:
     
     def __init__(self):
         
-        #usual stuff received
+        #the request params
         self.interval = 0
+        self.pair = ""
+        self.exchange = ""
+        
+        #usual stuff received
         self.time = []
         self.open = []
         self.high = []
         self.low = []
         self.close = []
-        self.volume_weighted_average = []
+        self.vwap = []#volume_weighted_average = []
         self.volume = []
         
-        pass
+    def __str__(self):
+        output_string = "MarketData object: " + str(self.pair) + " @ " + str(self.exchange) + " - " + str(self.interval) +"min"
+        return output_string

@@ -16,6 +16,9 @@ class Market:
     
     def __init__(self):
         
+        #The dictionary that holds different timeframes
+        self.market_datas = {15:market_data_object}#use interval times as keys
+        
         #The main marketdata object
         self.market_data = []
         
