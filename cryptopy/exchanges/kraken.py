@@ -129,6 +129,7 @@ class KrakenExchange(Exchange):
                 return pair
             else:
                 return "X"+str(pair)[first]+"Z"+str(pair[second])
+    
     def get_market_data(self,pair,interval,since=0):
         """
         Gets market data and returns a MarketData object
